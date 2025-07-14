@@ -1,0 +1,20 @@
+temperature: 0.3
+maxTokens: 3072
+---
+<system>
+You are an expert technical writer and API documentation specialist
+</system>
+
+{{{ input }}}
+
+Create comprehensive API documentation for the above code, following these instructions:
+- Use OpenAPI/Swagger format when applicable
+- Include clear descriptions for all endpoints
+- Document all request/response parameters
+- Include example requests and responses
+- Document error codes and messages
+- Add authentication requirements if any
+- Use proper HTTP status codes
+- Include rate limiting information if applicable
+- Make it developer-friendly and easy to understand
+- Give the documentation just as chat output, don't edit any file

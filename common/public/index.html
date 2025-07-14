@@ -20,10 +20,10 @@
                                 <div class="content">
                                     <div class="page-card-title" style="color: #AAAAAA;" id="imageUploadStatus">
                                         {{if .isQuery}}
-                                        No matching files
+                                        <span data-i18n="common.no_matching_files">No matching files</span>
                                         {{else}}
-                                        There are currently no files, please click <a class="button is-light" onclick="showUploadModal()">upload</a>
-                                        button to upload files.
+                                        <span data-i18n="common.no_files_message">There are currently no files, please click</span> <a class="button is-light" onclick="showUploadModal()" data-i18n="nav.upload">upload</a>
+                                        <span data-i18n="common.upload_instruction">button to upload files.</span>
                                         {{end}}
                                     </div>
                                 </div>
@@ -46,12 +46,12 @@
                                 <span class="tag is-light">{{$file.Uploader}}</span>
                                 <span class="tag is-light">{{$file.Time}}</span>
                                 <span class="tag is-light"
-                                      id="counter-{{$file.Id}}">{{$file.DownloadCounter}} downloads</span>
+                                      id="counter-{{$file.Id}}">{{$file.DownloadCounter}} <span data-i18n="common.downloads">downloads</span></span>
                                 <div class="page-card-text">
                                     {{if $file.Description}}
                                     {{$file.Description}}
                                     {{else}}
-                                    No description information
+                                    <span data-i18n="common.no_description">No description information</span>
                                     {{end}}
                                 </div>
                                 <div class="actions">
@@ -80,8 +80,8 @@
                 {{end}}
             </div>
             <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-                <a class="pagination-previous shadow" href="/?p={{.prev}}">Previous page</a>
-                <a class="pagination-next shadow" href="/?p={{.next}}">Next page</a>
+                <a class="pagination-previous shadow" href="/?p={{.prev}}" data-i18n="common.previous_page">Previous page</a>
+                <a class="pagination-next shadow" href="/?p={{.next}}" data-i18n="common.next_page">Next page</a>
             </nav>
         </div>
     </div>

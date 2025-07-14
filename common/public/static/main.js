@@ -1,9 +1,18 @@
 let hiddenTextArea = undefined;
 
+// Helper function to use i18n translation
+function t(key, ...args) {
+    if (typeof i18n !== 'undefined' && i18n.t) {
+        return i18n.t(key, ...args);
+    }
+    // Fallback: return the key if i18n is not available
+    return key;
+}
+
 function showUploadModal() {
     if (location.href.split('/')[3].startsWith("explorer")) {
         let path = getPathParam();
-        document.getElementById('uploadFileDialogTitle').innerText = `上传文件到 "${path}"`;
+        document.getElementById('uploadFileDialogTitle').innerText = t('upload.to_path', {path: path});
     }
     showModal('uploadModal');
 }
@@ -34,7 +43,9 @@ function closeModal(id) {
 
 function onChooseBtnClicked(e) {
     document.getElementById('fileInput').click();
-    e.preventDefault();
+    if (e) {
+        e.preventDefault();
+    }
 }
 
 function deleteFile(id, link) {
@@ -55,7 +66,7 @@ function deleteFile(id, link) {
                 showMessage(data.message, true);
             } else {
                 document.getElementById("file-" + id).style.display = 'none';
-                showToast(`文件删除成功：${link}`)
+                showToast(t('file.deleted_success', {link: link}))
             }
         })
     });
@@ -79,7 +90,7 @@ function deleteImage() {
         res.json().then(function (data) {
             if (data.success) {
                 e.value = "";
-                showToast("图片已成功删除");
+                showToast(t('image.deleted_success'));
             } else {
                 showToast(data.message, "danger");
             }
@@ -90,17 +101,17 @@ function deleteImage() {
 
 function updateDownloadCounter(id) {
     let e = document.getElementById(id);
-    let n = parseInt(e.innerText.replace("次下载", ""));
-    e.innerText = `${n + 1} 次下载`;
+    let n = parseInt(e.innerText.replace(" downloads", ""));
+    e.innerText = `${n + 1} downloads`;
 }
 
 function onFileInputChange() {
     let prompt;
     let files = document.getElementById('fileInput').files;
     if (files.length === 1) {
-        prompt = '已选择文件: ' + files[0].name;
+        prompt = t('upload.selected_file', {name: files[0].name});
     } else {
-        prompt = `已选择 ${files.length} 个文件`;
+        prompt = t('upload.selected_files', {count: files.length});
     }
     document.getElementById('uploadFileDialogTitle').innerText = prompt;
 }
@@ -135,16 +146,16 @@ function uploadFile() {
     }
     formData.append("path", path);
 
-    fileUploadTitle.innerText = `正在上传 ${files.length} 个文件`;
+    fileUploadTitle.innerText = t('upload.uploading_files', {count: files.length});
 
     let fileUploader = new XMLHttpRequest();
     fileUploader.upload.addEventListener("progress", ev => {
         let percent = (ev.loaded / ev.total) * 100;
         fileUploadProgress.value = Math.round(percent);
-        fileUploadDetail.innerText = `处理中 ${byte2mb(ev.loaded)} MB / ${byte2mb(ev.total)} MB...`
+        fileUploadDetail.innerText = t('upload.processing', {loaded: byte2mb(ev.loaded), total: byte2mb(ev.total)})
     }, false);
     fileUploader.addEventListener("load", ev => {
-        fileUploadTitle.innerText = `已上传 ${files.length} 个文件`;
+        fileUploadTitle.innerText = t('upload.uploaded_files', {count: files.length});
         if (fileUploader.status === 403) {
             location.href = "/login";
         } else {
@@ -158,12 +169,12 @@ function uploadFile() {
         if (fileUploader.status === 403) {
             location.href = "/login";
         } else {
-            fileUploadTitle.innerText = `文件上传失败`;
+            fileUploadTitle.innerText = t('upload.failed');
         }
         console.error(ev);
     }, false);
     fileUploader.addEventListener("abort", ev => {
-        fileUploadTitle.innerText = `文件上传已终止`;
+        fileUploadTitle.innerText = t('upload.aborted');
     }, false);
     fileUploader.open("POST", "/api/file");
     fileUploader.send(formData);
@@ -176,7 +187,7 @@ function dropHandler(ev) {
 }
 
 function dragOverHandler(ev) {
-    document.getElementById('uploadFileDialogTitle').innerText = "释放文件至此对话框";
+    document.getElementById('uploadFileDialogTitle').innerText = t('upload.release_files');
     ev.preventDefault();
 }
 
@@ -190,7 +201,7 @@ function uploadImage() {
     document.getElementById("promptBox").style.display = "block";
     let imageUploadProgress = document.getElementById('imageUploadProgress');
     let imageUploadStatus = document.getElementById('imageUploadStatus');
-    imageUploadStatus.innerText = "上传中..."
+    imageUploadStatus.innerText = t('upload.uploading')
 
     let files = document.getElementById('fileInput').files;
     let formData = new FormData();
@@ -208,17 +219,17 @@ function uploadImage() {
     fileUploader.addEventListener("load", ev => {
         // Uploading is done.
         if (fileUploader.status === 200) {
-            imageUploadStatus.innerText = "文件上传成功";
+            imageUploadStatus.innerText = t('upload.success');
         } else if (fileUploader.status === 403) {
             location.href = "/login";
         }
     }, false);
     fileUploader.addEventListener("error", ev => {
-        imageUploadStatus.innerText = "文件上传失败";
+        imageUploadStatus.innerText = t('upload.failed');
         console.error(ev);
     }, false);
     fileUploader.addEventListener("abort", ev => {
-        imageUploadStatus.innerText = "文件上传终止";
+        imageUploadStatus.innerText = t('upload.aborted');
     }, false);
     fileUploader.addEventListener("readystatechange", ev => {
         if (fileUploader.readyState === 4) {
@@ -235,13 +246,13 @@ function uploadImage() {
                         <input class="input url-input" type="text" value="${url}" readonly>
                     </div>
                     <div class="control">
-                        <a class="button is-light" onclick="copyText('${url}')">
-                            复制链接
+                        <a class="button is-light" onclick="copyText('${url}')" data-i18n="common.copy_link">
+                            Copy link
                         </a>
                     </div>
                     <div class="control">
-                        <a class="button is-light" onclick="copyText('![${filename}](${url})')">
-                            复制 Markdown 代码
+                        <a class="button is-light" onclick="copyText('![${filename}](${url})')" data-i18n="common.copy_markdown">
+                            Copy Markdown code
                         </a>
                     </div>
                 </div>
@@ -290,7 +301,7 @@ function copyLink(link) {
     let url = window.location.origin + link;
     url = decodeURI(url);
     copyText(url);
-    showToast(`已复制：${url}`, 'success');
+    showToast(t('common.copied', {text: url}), 'success');
 }
 
 function toLocalTime(str) {
@@ -335,16 +346,16 @@ async function loadOptions() {
                 <label class="label">${key}</label>
                 <div class="field has-addons">
                     <p class="control is-expanded">
-                        <input class="input" id="inputOption${key}" type="text" placeholder="请输入新的配置" value="${value}">
+                        <input class="input" id="inputOption${key}" type="text" placeholder="${t('settings.enter_new_config')}" value="${value}">
                     </p>
                     <p class="control">
-                        <a class="button" onclick="updateOption('${key}', 'inputOption${key}')">提交</a>
+                        <a class="button" onclick="updateOption('${key}', 'inputOption${key}')">Submit</a>
                     </p>
                 </div>
             </div>`;
         }
     } else {
-        html = `<p>选项加载失败：${result.message}</p>`
+        html = `<p>${t('settings.options_load_failed', {message: result.message})}</p>`
     }
     tab.innerHTML = html;
 }
@@ -364,9 +375,9 @@ async function updateOption(key, inputElementId, originValue = "") {
     });
     let result = await response.json();
     if (result.success) {
-        showToast(`更新成功`, "success");
+        showToast(t('settings.update_success'), "success");
     } else {
-        showToast(`更新失败：${result.message}`, "danger");
+        showToast(t('settings.update_failed', {message: result.message}), "danger");
         if (originValue !== "") {
             inputElement.value = originValue;
         }
@@ -388,9 +399,9 @@ async function updateUser(key, inputElementId) {
     });
     let result = await response.json();
     if (result.success) {
-        showToast(`更新信息成功`, "success");
+        showToast(t('user.info_update_success'), "success");
     } else {
-        showToast(`更新信息失败：${result.message}`, "danger");
+        showToast(t('user.info_update_failed', {message: result.message}), "danger");
     }
 }
 
@@ -413,9 +424,9 @@ async function createUser() {
     });
     let result = await response.json();
     if (result.success) {
-        showToast(`添加用户成功`, "success");
+        showToast(t('user.add_success'), "success");
     } else {
-        showToast(`添加用户失败：${result.message}`, "danger");
+        showToast(t('user.add_failed', {message: result.message}), "danger");
     }
 }
 
@@ -437,9 +448,9 @@ async function manageUser() {
     });
     let result = await response.json();
     if (result.success) {
-        showToast(`操作成功`, "success");
+        showToast(t('common.operation_success'), "success");
     } else {
-        showToast(`操作失败：${result.message}`, "danger");
+        showToast(t('common.operation_failed', {message: result.message}), "danger");
     }
 }
 
@@ -452,9 +463,9 @@ async function generateNewToken() {
     });
     let result = await response.json();
     if (result.success) {
-        showToast(`Token 已重置为：${result.data}`, "success");
+        showToast(t('user.token_reset', {token: result.data}), "success");
     } else {
-        showToast(`操作失败：${result.message}`, "danger");
+        showToast(t('common.operation_failed', {message: result.message}), "danger");
     }
 }
 
@@ -525,6 +536,11 @@ function init() {
     hiddenTextArea.setAttribute("id", "hiddenTextArea");
     hiddenTextArea.style.cssText = "height: 0px; width: 0px";
     document.body.appendChild(hiddenTextArea);
+    
+    // Initialize i18n system
+    if (typeof i18n !== 'undefined' && i18n.init) {
+        i18n.init();
+    }
 }
 
 document.addEventListener('DOMContentLoaded', init)

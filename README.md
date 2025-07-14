@@ -42,6 +42,14 @@ _✨ 文件分享工具，仅单个可执行文件，开箱即用，可用于局
   <a href="#演示">截图展示</a>
 </p>
 
+<p align="center">
+  <strong>语言:</strong>
+  <a href="README.md">中文</a> |
+  <a href="README.en.md">English</a> |
+  <a href="README.vi.md">Tiếng Việt</a> |
+  <a href="README.ja.md">日本語</a>
+</p>
+
 > **Note**：推荐使用官方的 [Go File 启动器](https://github.com/songquanpeng/gofile-launcher)，免去命令行操作。
 
 ## 特点

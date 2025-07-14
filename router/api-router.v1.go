@@ -12,6 +12,11 @@ func setApiRouter(router *gin.Engine) {
 	router.POST("/api/file", middleware.FileUploadPermissionCheck(), controller.UploadFile)
 	router.POST("/api/image", middleware.ImageUploadPermissionCheck(), controller.UploadImage)
 	router.GET("/api/notice", controller.GetNotice)
+	
+	// i18n routes
+	router.GET("/api/i18n/languages", controller.GetLanguages)
+	router.GET("/i18n/:lang", controller.GetTranslations)
+	router.POST("/api/i18n/language", controller.SetLanguage)
 	basicAuth := router.Group("/api")
 	basicAuth.Use(middleware.ApiAuth())
 	{

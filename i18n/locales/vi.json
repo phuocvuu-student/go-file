@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "front_page": "Trang Chủ",
+    "document": "Tài Liệu",
+    "picture": "Hình Ảnh",
+    "video": "Video",
+    "help": "Trợ Giúp",
+    "search_files": "Tìm kiếm tệp...",
+    "upload": "Tải Lên",
+    "login": "Đăng Nhập",
+    "system_management": "Quản Lý Hệ Thống",
+    "project_address": "Địa Chỉ Dự Án",
+    "sign_out": "Đăng Xuất"
+  },
+  "upload": {
+    "to_path": "Tải lên tệp vào \"{{path}}\"",
+    "selected_file": "Đã chọn tệp: {{name}}",
+    "selected_files": "Đã chọn {{count}} tệp",
+    "uploading_files": "Đang tải lên {{count}} tệp",
+    "uploaded_files": "Đã tải lên {{count}} tệp",
+    "processing": "Đang xử lý {{loaded}} MB / {{total}} MB...",
+    "failed": "Tải lên tệp thất bại",
+    "aborted": "Đã hủy tải lên tệp",
+    "release_files": "Thả tệp vào đây",
+    "uploading": "Đang tải lên...",
+    "success": "Tải lên tệp thành công"
+  },
+  "file": {
+    "deleted_success": "Đã xóa tệp thành công: {{link}}"
+  },
+  "image": {
+    "deleted_success": "Đã xóa hình ảnh thành công"
+  },
+  "common": {
+    "anonymous_user": "Người dùng ẩn danh",
+    "text_share": "Chia sẻ văn bản",
+    "content_summary": "Tóm tắt nội dung: %s...",
+    "copy_link": "Sao chép liên kết",
+    "copy_markdown": "Sao chép mã Markdown",
+    "copied": "Đã sao chép: {{text}}",
+    "operation_success": "Thao tác thành công",
+    "operation_failed": "Thao tác thất bại: {{message}}",
+    "no_matching_files": "Không có tệp nào phù hợp",
+    "no_files_message": "Hiện tại chưa có tệp nào, vui lòng nhấp",
+    "upload_instruction": "để tải lên tệp.",
+    "downloads": "lượt tải",
+    "no_description": "Không có thông tin mô tả",
+    "previous_page": "Trang trước",
+    "next_page": "Trang sau"
+  },
+  "settings": {
+    "enter_new_config": "Vui lòng nhập cấu hình mới",
+    "options_load_failed": "Tải tùy chọn thất bại: {{message}}",
+    "update_success": "Cập nhật thành công",
+    "update_failed": "Cập nhật thất bại: {{message}}"
+  },
+  "user": {
+    "login_error": "Tên người dùng hoặc mật khẩu không chính xác, hoặc người dùng đã bị cấm",
+    "session_save_error": "Không thể lưu thông tin phiên, vui lòng thử lại",
+    "user_not_exist": "Người dùng không tồn tại",
+    "info_update_success": "Cập nhật thông tin thành công",
+    "info_update_failed": "Cập nhật thông tin thất bại: {{message}}",
+    "add_success": "Đã thêm người dùng thành công",
+    "add_failed": "Thêm người dùng thất bại: {{message}}",
+    "token_reset": "Token đã được đặt lại thành: {{token}}"
+  },
+  "system": {
+    "anonymous_user": "Người dùng ẩn danh",
+    "text_share": "Chia sẻ văn bản",
+    "content_summary": "Tóm tắt nội dung: {{summary}}...",
+    "invalid_parameters": "Tham số không hợp lệ",
+    "file_deleted": "Đã xóa tệp thành công",
+    "file_not_exist": "Tệp không tồn tại!",
+    "not_logged_in": "Chưa đăng nhập hoặc đăng nhập đã hết hạn",
+    "no_permission": "Không có quyền thực hiện thao tác này, chưa đăng nhập hoặc token không hợp lệ",
+    "no_permission_admin": "Không có quyền thực hiện thao tác này, chưa đăng nhập hoặc token không hợp lệ, hoặc không đủ quyền",
+    "no_token_auth": "Giao diện này không thể xác thực bằng token",
+    "redis_not_enabled": "Redis chưa được kích hoạt, không thể bật tính năng thống kê"
+  }
+}

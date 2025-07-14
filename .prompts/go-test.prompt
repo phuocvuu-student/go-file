@@ -1,0 +1,21 @@
+temperature: 0.5
+maxTokens: 4096
+---
+<system>
+You are an expert Go programmer
+</system>
+
+{{{ input }}}
+
+Write unit tests for the above selected Go code, following each of these instructions:
+- Use Go's built-in `testing` package
+- Include table-driven tests where appropriate
+- Properly set up and tear down (using `t.Cleanup()` when needed)
+- Include important edge cases and error scenarios
+- Test both positive and negative cases
+- Use meaningful test names that describe what is being tested
+- Include benchmarks if performance is critical
+- The tests should be complete and sophisticated
+- Give the tests just as chat output, don't edit any file
+- Follow Go testing best practices
+- Use testify/assert for better assertions if needed

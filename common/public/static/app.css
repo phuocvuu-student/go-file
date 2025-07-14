@@ -48,6 +48,16 @@ a:hover {
     color: black;
 }
 
+/* Language selector styling */
+#language-selector .navbar-item.is-active {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+#language-selector .navbar-item:hover {
+    background-color: #f0f0f0;
+}
+
 .footer {
     padding: 1.5rem 1.5rem 2rem;
 }

@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"go-file/common"
+	"go-file/middleware"
 	"go-file/model"
 	"net/http"
 	"path/filepath"
@@ -20,7 +21,7 @@ type ImageDeleteRequest struct {
 func UploadImage(c *gin.Context) {
 	uploader := c.GetString("username")
 	if uploader == "" {
-		uploader = "匿名用户"
+		uploader = middleware.T(c, "common.anonymous_user")
 	}
 	currentTime := time.Now().Format("2006-01-02 15:04:05")
 	form, err := c.MultipartForm()
@@ -69,7 +70,7 @@ func DeleteImage(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"success": false,
-			"message": "无效的参数",
+			"message": middleware.T(c, "common.invalid_parameters"),
 		})
 		return
 	}
@@ -81,7 +82,7 @@ func DeleteImage(c *gin.Context) {
 	if rowsAffected == 0 {
 		c.JSON(http.StatusOK, gin.H{
 			"success": false,
-			"message": "文件不存在！",
+			"message": middleware.T(c, "common.file_not_exist"),
 		})
 		return
 	}

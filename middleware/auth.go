@@ -14,7 +14,7 @@ func WebAuth() func(c *gin.Context) {
 		username := session.Get("username")
 		if username == nil {
 			c.HTML(http.StatusForbidden, "login.html", gin.H{
-				"message": "未登录或登录已过期",
+				"message": T(c, "auth.not_logged_in"),
 				"option":  common.OptionMap,
 			})
 			c.Abort()
@@ -57,7 +57,7 @@ func ApiAuth() func(c *gin.Context) {
 			} else {
 				c.JSON(http.StatusForbidden, gin.H{
 					"success": false,
-					"message": "无权进行此操作，未登录或 token 无效",
+					"message": T(c, "auth.invalid_token"),
 				})
 				c.Abort()
 				return
@@ -90,7 +90,7 @@ func ApiAdminAuth() func(c *gin.Context) {
 		if role != common.RoleAdminUser {
 			c.JSON(http.StatusForbidden, gin.H{
 				"success": false,
-				"message": "无权进行此操作，未登录或 token 无效，或没有权限",
+				"message": T(c, "auth.insufficient_privileges"),
 			})
 			c.Abort()
 			return
@@ -108,7 +108,7 @@ func NoTokenAuth() func(c *gin.Context) {
 		if authByToken == "true" {
 			c.JSON(http.StatusForbidden, gin.H{
 				"success": false,
-				"message": "该接口不能使用 token 进行验证",
+				"message": T(c, "auth.token_auth_not_allowed"),
 			})
 			c.Abort()
 			return

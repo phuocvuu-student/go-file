@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "front_page": "フロントページ",
+    "document": "ドキュメント",
+    "picture": "画像",
+    "video": "ビデオ",
+    "help": "ヘルプ",
+    "search_files": "ファイルを検索...",
+    "upload": "アップロード",
+    "login": "ログイン",
+    "system_management": "システム管理",
+    "project_address": "プロジェクトアドレス",
+    "sign_out": "ログアウト"
+  },
+  "upload": {
+    "to_path": "\"{{path}}\"にファイルをアップロード",
+    "selected_file": "選択されたファイル: {{name}}",
+    "selected_files": "{{count}}個のファイルが選択されました",
+    "uploading_files": "{{count}}個のファイルをアップロード中",
+    "uploaded_files": "{{count}}個のファイルがアップロードされました",
+    "processing": "処理中 {{loaded}} MB / {{total}} MB...",
+    "failed": "ファイルのアップロードに失敗しました",
+    "aborted": "ファイルのアップロードが中止されました",
+    "release_files": "ファイルをここにドロップ",
+    "uploading": "アップロード中...",
+    "success": "ファイルのアップロードに成功しました"
+  },
+  "file": {
+    "deleted_success": "ファイルが正常に削除されました: {{link}}"
+  },
+  "image": {
+    "deleted_success": "画像が正常に削除されました"
+  },
+  "common": {
+    "copy_link": "リンクをコピー",
+    "copy_markdown": "Markdownコードをコピー",
+    "copied": "コピーしました: {{text}}",
+    "operation_success": "操作が成功しました",
+    "operation_failed": "操作に失敗しました: {{message}}"
+  },
+  "settings": {
+    "enter_new_config": "新しい設定を入力してください",
+    "options_load_failed": "オプションの読み込みに失敗しました: {{message}}",
+    "update_success": "更新に成功しました",
+    "update_failed": "更新に失敗しました: {{message}}"
+  },
+  "user": {
+    "info_update_success": "情報が正常に更新されました",
+    "info_update_failed": "情報の更新に失敗しました: {{message}}",
+    "add_success": "ユーザーが正常に追加されました",
+    "add_failed": "ユーザーの追加に失敗しました: {{message}}",
+    "token_reset": "トークンがリセットされました: {{token}}"
+  },
+  "system": {
+    "anonymous_user": "匿名ユーザー",
+    "text_share": "テキスト共有",
+    "content_summary": "コンテンツの要約: {{summary}}...",
+    "invalid_parameters": "無効なパラメータ",
+    "file_deleted": "ファイルが正常に削除されました",
+    "file_not_exist": "ファイルが存在しません！",
+    "not_logged_in": "ログインしていないか、ログインの有効期限が切れています",
+    "no_permission": "この操作を実行する権限がありません。ログインしていないか、トークンが無効です",
+    "no_permission_admin": "この操作を実行する権限がありません。ログインしていないか、トークンが無効であるか、権限が不足しています",
+    "no_token_auth": "このインターフェースはトークンを使用して認証することはできません",
+    "redis_not_enabled": "Redisが有効になっていないため、統計機能を有効にできません"
+  }
+}

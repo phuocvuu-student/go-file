@@ -1,8 +1,96 @@
-.idea
-.vscode
-upload
-build
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+build/
+dist/
 *.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go specific
+vendor/
+*.test
+*.prof
+*.cover
+*.out
+
+# Database files
 *.db
 *.db-journal
-vendor/
+*.sqlite
+*.sqlite3
+
+# Environment and config files
+.env
+.env.local
+.env.*.local
+config.yml
+*.yaml
+*.yml
+!example.yml
+!example.yaml
+
+# Upload directory (user data)
+upload/
+images/
+
+# Logs
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows specific
+desktop.ini
+$RECYCLE.BIN/
+
+# Cloudflared
+cloudflared.exe
+cloudflared
+
+# Temporary files
+*.tmp
+*.temp
+
+# Go File specific
+go-file.exe
+go-file
+go-file.db
+
+# Node modules (if any)
+node_modules/
+
+# Python cache (for scripts)
+__pycache__/
+*.pyc
+*.pyo
+
+# Coverage reports
+coverage.txt
+coverage.out
+
+# Test files
+*.test.exe
+
+# Backup files
+*.bak
+*.backup
+
+# Archive files
+*.tar.gz
+*.zip
+*.rar

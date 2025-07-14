@@ -3,6 +3,7 @@ package model
 import (
 	"errors"
 	"go-file/common"
+	"go-file/i18n"
 	"strconv"
 	"strings"
 )
@@ -37,7 +38,7 @@ func InitOptionMap() {
 
 func UpdateOption(key string, value string) error {
 	if key == "StatEnabled" && value == "true" && !common.RedisEnabled {
-		return errors.New("未启用 Redis，无法启用统计功能")
+		return errors.New(i18n.T("en", "system.redis_not_enabled"))
 	}
 
 	// Save to database first

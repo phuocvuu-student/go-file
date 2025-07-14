@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "front_page": "首页",
+    "document": "文档",
+    "picture": "图片",
+    "video": "视频",
+    "help": "帮助",
+    "search_files": "搜索文件...",
+    "upload": "上传",
+    "login": "登录",
+    "system_management": "系统管理",
+    "project_address": "项目地址",
+    "sign_out": "退出登录"
+  },
+  "upload": {
+    "to_path": "上传文件到 \"{{path}}\"",
+    "selected_file": "已选择文件: {{name}}",
+    "selected_files": "已选择 {{count}} 个文件",
+    "uploading_files": "正在上传 {{count}} 个文件",
+    "uploaded_files": "已上传 {{count}} 个文件",
+    "processing": "处理中 {{loaded}} MB / {{total}} MB...",
+    "failed": "文件上传失败",
+    "aborted": "文件上传已取消",
+    "release_files": "释放文件到此对话框",
+    "uploading": "上传中...",
+    "success": "文件上传成功"
+  },
+  "file": {
+    "deleted_success": "文件删除成功: {{link}}"
+  },
+  "image": {
+    "deleted_success": "图片删除成功"
+  },
+  "common": {
+    "copy_link": "复制链接",
+    "copy_markdown": "复制 Markdown 代码",
+    "copied": "已复制: {{text}}",
+    "operation_success": "操作成功",
+    "operation_failed": "操作失败: {{message}}"
+  },
+  "settings": {
+    "enter_new_config": "请输入新配置",
+    "options_load_failed": "选项加载失败: {{message}}",
+    "update_success": "更新成功",
+    "update_failed": "更新失败: {{message}}"
+  },
+  "user": {
+    "info_update_success": "信息更新成功",
+    "info_update_failed": "信息更新失败: {{message}}",
+    "add_success": "用户添加成功",
+    "add_failed": "添加用户失败: {{message}}",
+    "token_reset": "令牌已重置为: {{token}}"
+  },
+  "system": {
+    "anonymous_user": "匿名用户",
+    "text_share": "文本分享",
+    "content_summary": "内容摘要: {{summary}}...",
+    "invalid_parameters": "无效参数",
+    "file_deleted": "文件删除成功",
+    "file_not_exist": "文件不存在！",
+    "not_logged_in": "未登录或登录已过期",
+    "no_permission": "无权执行此操作，未登录或令牌无效",
+    "no_permission_admin": "无权执行此操作，未登录或令牌无效，或权限不足",
+    "no_token_auth": "此接口不能使用令牌进行认证",
+    "redis_not_enabled": "Redis 未启用，统计功能无法启用"
+  }
+}

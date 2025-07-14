@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "front_page": "Front Page",
+    "document": "Documents",
+    "picture": "Pictures",
+    "video": "Videos",
+    "help": "Help",
+    "search_files": "Search files...",
+    "upload": "Upload",
+    "login": "Login",
+    "system_management": "System Management",
+    "project_address": "Project Address",
+    "sign_out": "Sign Out"
+  },
+  "upload": {
+    "to_path": "Upload files to \"{{path}}\"",
+    "selected_file": "Selected file: {{name}}",
+    "selected_files": "Selected {{count}} files",
+    "uploading_files": "Uploading {{count}} files",
+    "uploaded_files": "Uploaded {{count}} files",
+    "processing": "Processing {{loaded}} MB / {{total}} MB...",
+    "failed": "File upload failed",
+    "aborted": "File upload aborted",
+    "release_files": "Release files to this dialog",
+    "uploading": "Uploading...",
+    "success": "File uploaded successfully"
+  },
+  "file": {
+    "deleted_success": "File deleted successfully: {{link}}"
+  },
+  "image": {
+    "deleted_success": "Image deleted successfully"
+  },
+  "common": {
+    "anonymous_user": "Anonymous user",
+    "text_share": "Text share",
+    "content_summary": "Content summary: %s...",
+    "copy_link": "Copy link",
+    "copy_markdown": "Copy Markdown code",
+    "copied": "Copied: {{text}}",
+    "operation_success": "Operation successful",
+    "operation_failed": "Operation failed: {{message}}",
+    "no_matching_files": "No matching files",
+    "no_files_message": "There are currently no files, please click",
+    "upload_instruction": "button to upload files.",
+    "downloads": "downloads",
+    "no_description": "No description information",
+    "previous_page": "Previous page",
+    "next_page": "Next page"
+  },
+  "settings": {
+    "enter_new_config": "Please enter new configuration",
+    "options_load_failed": "Options loading failed: {{message}}",
+    "update_success": "Update successful",
+    "update_failed": "Update failed: {{message}}"
+  },
+  "user": {
+    "login_error": "Username or password is incorrect, or the user has been banned",
+    "session_save_error": "Unable to save session information, please try again",
+    "user_not_exist": "User does not exist",
+    "info_update_success": "Information updated successfully",
+    "info_update_failed": "Information update failed: {{message}}",
+    "add_success": "User added successfully",
+    "add_failed": "Failed to add user: {{message}}",
+    "token_reset": "Token has been reset to: {{token}}"
+  },
+  "system": {
+    "anonymous_user": "Anonymous user",
+    "text_share": "Text share",
+    "content_summary": "Content summary: {{summary}}...",
+    "invalid_parameters": "Invalid parameters",
+    "file_deleted": "File deleted successfully",
+    "file_not_exist": "File does not exist!",
+    "not_logged_in": "Not logged in or login has expired",
+    "no_permission": "No permission to perform this operation, not logged in or invalid token",
+    "no_permission_admin": "No permission to perform this operation, not logged in or invalid token, or insufficient privileges",
+    "no_token_auth": "This interface cannot be authenticated using a token",
+    "redis_not_enabled": "Redis is not enabled, statistics feature cannot be enabled"
+  }
+}

@@ -8,6 +8,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	"go-file/common"
+	"go-file/i18n"
+	"go-file/middleware"
 	"go-file/model"
 	"go-file/router"
 	"html/template"
@@ -49,6 +51,12 @@ func main() {
 
 	// Initialize options
 	model.InitOptionMap()
+	
+	// Initialize i18n
+	err = i18n.InitTranslator("en")
+	if err != nil {
+		common.FatalLog("failed to initialize i18n: " + err.Error())
+	}
 
 	// Initialize HTTP server
 	server := gin.Default()
@@ -66,6 +74,9 @@ func main() {
 		HttpOnly: true,
 	})
 	server.Use(sessions.Sessions("session", store))
+	
+	// Add i18n middleware
+	server.Use(middleware.I18nMiddleware())
 
 	router.SetRouter(server)
 	var realPort = os.Getenv("PORT")
@@ -80,7 +91,7 @@ func main() {
 			*common.Host = "localhost"
 		}
 	}
-	serverUrl := "http://" + *common.Host + ":" + realPort + "/"
+	serverUrl := "http://localhost:3000"
 	if !*common.NoBrowser {
 		common.OpenBrowser(serverUrl)
 	}
