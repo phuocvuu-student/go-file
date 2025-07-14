@@ -2,11 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/gin-contrib/sessions"
-	"github.com/gin-contrib/sessions/cookie"
-	"github.com/gin-contrib/sessions/redis"
-	"github.com/gin-gonic/gin"
-	"github.com/jinzhu/gorm"
 	"go-file/common"
 	"go-file/i18n"
 	"go-file/middleware"
@@ -15,6 +10,12 @@ import (
 	"html/template"
 	"os"
 	"strconv"
+
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
+	"github.com/gin-contrib/sessions/redis"
+	"github.com/gin-gonic/gin"
+	"github.com/jinzhu/gorm"
 )
 
 func loadTemplate() *template.Template {
@@ -51,7 +52,7 @@ func main() {
 
 	// Initialize options
 	model.InitOptionMap()
-	
+
 	// Initialize i18n
 	err = i18n.InitTranslator("en")
 	if err != nil {
@@ -74,7 +75,7 @@ func main() {
 		HttpOnly: true,
 	})
 	server.Use(sessions.Sessions("session", store))
-	
+
 	// Add i18n middleware
 	server.Use(middleware.I18nMiddleware())
 
@@ -91,7 +92,7 @@ func main() {
 			*common.Host = "localhost"
 		}
 	}
-	serverUrl := "http://localhost:3000"
+	serverUrl := "http://localhost:3005"
 	if !*common.NoBrowser {
 		common.OpenBrowser(serverUrl)
 	}

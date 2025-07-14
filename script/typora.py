@@ -5,7 +5,7 @@
 import sys
 import requests
 
-SERVER_URL = 'http://localhost:3000'
+SERVER_URL = 'http://localhost:3005'
 TOKEN = '593ff9f2e91842b497ae79ecae83f412'
 
 for file in sys.argv[1:]:

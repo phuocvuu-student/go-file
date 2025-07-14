@@ -67,12 +67,12 @@ _✨ ファイル共有ツール、単一の実行可能ファイル、すぐに
 12. コマンドラインに不慣れなユーザー向けに**ランチャー**を作成、[こちらを参照](https://github.com/songquanpeng/gofile-launcher)。
 13. **PicGoをサポート**、`gofile`プラグインを検索してインストール、[こちらを参照](https://github.com/songquanpeng/picgo-plugin-gofile)。
 14. 付属のCLIツール、コマンドラインファイルアップロードをサポート、P2Pモードファイル共有をサポート、[こちらを参照](https://github.com/songquanpeng/gofile-cli)。
-15. Dockerワンクリックデプロイ: `docker run -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
+15. Dockerワンクリックデプロイ: `docker run -d --restart always -p 3005:3005 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
 
 ## 使用方法
 > v0.3.3以前のバージョンの使用方法については、[こちらをクリック](https://github.com/songquanpeng/go-file/tree/52e8303e33e99bbcaf583d2d5a5bb0ec197bc676#使用方法)してください。
 
-ダブルクリックするだけで使用可能、デフォルトポートは`3000`です。プログラムは初回起動時に管理者アカウントを自動作成します。ユーザー名は`admin`、パスワードは`123456`です。ログイン後、`管理` -> `アカウント管理`タブでユーザーパスワードを変更することを忘れないでください。
+ダブルクリックするだけで使用可能、デフォルトポートは`3005`です。プログラムは初回起動時に管理者アカウントを自動作成します。ユーザー名は`admin`、パスワードは`123456`です。ログイン後、`管理` -> `アカウント管理`タブでユーザーパスワードを変更することを忘れないでください。
 
 プログラムが自動的にブラウザを開きます。右上の`アップロード`ボタンをクリックしてファイルをアップロードします。ドラッグアンドドロップアップロードと複数ファイルの同時アップロードをサポートします。
 
@@ -98,7 +98,7 @@ _✨ ファイル共有ツール、単一の実行可能ファイル、すぐに
 [ランチャー](https://github.com/songquanpeng/gofile-launcher)を直接使用することを推奨します。
 
 **Dockerを使用したデプロイ:**
-実行: `docker run -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
+実行: `docker run -d --restart always -p 3005:3005 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
 
 データはホストマシンの`/home/ubuntu/data/go-file`ディレクトリに保存されます。
 

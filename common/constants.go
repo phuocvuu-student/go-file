@@ -4,12 +4,13 @@ import (
 	"embed"
 	"flag"
 	"fmt"
-	"github.com/google/uuid"
 	"os"
 	"path"
 	"path/filepath"
 	"strings"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 var StartTime = time.Now()
@@ -54,7 +55,7 @@ const (
 )
 
 var (
-	Port         = flag.Int("port", 3000, "Specify the server listening port.")
+	Port         = flag.Int("port", 3005, "Specify the server listening port.")
 	Host         = flag.String("host", "", "The server's IP address or domain.")
 	Path         = flag.String("path", "", "Specify a local path to public.")
 	VideoPath    = flag.String("video", "", "Specify a folder containing videos to be made public.")

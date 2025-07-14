@@ -67,12 +67,12 @@ _✨ 文件分享工具，仅单个可执行文件，开箱即用，可用于局
 12. 为不熟悉命令行的用户制作了**启动器**，[详见此处](https://github.com/songquanpeng/gofile-launcher)。
 13. **支持 PicGo**，插件搜索 `gofile` 即可安装，[详见此处](https://github.com/songquanpeng/picgo-plugin-gofile)。
 14. 配套 CLI 工具，支持命令行上传文件，支持 P2P 模式文件分享，[详见此处](https://github.com/songquanpeng/gofile-cli)。
-15. Docker 一键部署：`docker run -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
+15. Docker 一键部署：`docker run -d --restart always -p 3005:3005 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
 
 ## 使用方法
 > v0.3.3 以及之前版本的使用方法请[点击此处](https://github.com/songquanpeng/go-file/tree/52e8303e33e99bbcaf583d2d5a5bb0ec197bc676#使用方法)。
 
-直接双击即可使用，默认端口为 `3000`，程序在第一次启动时会自动创建管理员账户，用户名为 `admin`，密码为 `123456`，记得登录后到 `管理页面` 下的 `账户管理` 标签页中更改你的用户密码。
+直接双击即可使用，默认端口为 `3005`，程序在第一次启动时会自动创建管理员账户，用户名为 `admin`，密码为 `123456`，记得登录后到 `管理页面` 下的 `账户管理` 标签页中更改你的用户密码。
 
 之后程序将自动为你打开浏览器，点击右上角的 `上传` 按钮即可上传，支持拖放上传，支持同时上传多个文件。
 
@@ -98,7 +98,7 @@ _✨ 文件分享工具，仅单个可执行文件，开箱即用，可用于局
 建议直接使用[启动器](https://github.com/songquanpeng/gofile-launcher)。
 
 **使用 Docker 进行部署：**
-执行：`docker run -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
+执行：`docker run -d --restart always -p 3005:3005 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
 
 数据将会保存在宿主机的 `/home/ubuntu/data/go-file` 目录。
 

@@ -67,12 +67,12 @@ _✨ File sharing tool, single executable file, ready to use out of the box, can
 12. Created a **launcher** for users unfamiliar with command line, [see here](https://github.com/songquanpeng/gofile-launcher).
 13. **Supports PicGo**, search `gofile` plugin to install, [see here](https://github.com/songquanpeng/picgo-plugin-gofile).
 14. Accompanying CLI tool, supports command line file upload, supports P2P mode file sharing, [see here](https://github.com/songquanpeng/gofile-cli).
-15. Docker one-click deployment: `docker run -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
+15. Docker one-click deployment: `docker run -d --restart always -p 3005:3005 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
 
 ## Usage
 > For usage of v0.3.3 and earlier versions, please [click here](https://github.com/songquanpeng/go-file/tree/52e8303e33e99bbcaf583d2d5a5bb0ec197bc676#使用方法).
 
-Just double-click to use, default port is `3000`. The program will automatically create an administrator account on first startup, username is `admin`, password is `123456`. Remember to go to `Management` -> `Account Management` tab to change your user password after logging in.
+Just double-click to use, default port is `3005`. The program will automatically create an administrator account on first startup, username is `admin`, password is `123456`. Remember to go to `Management` -> `Account Management` tab to change your user password after logging in.
 
 The program will automatically open the browser for you. Click the `Upload` button in the upper right corner to upload files. Supports drag and drop upload and simultaneous upload of multiple files.
 
@@ -98,7 +98,7 @@ The program will automatically open the browser for you. Click the `Upload` butt
 It is recommended to use the [launcher](https://github.com/songquanpeng/gofile-launcher) directly.
 
 **Deploy using Docker:**
-Execute: `docker run -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
+Execute: `docker run -d --restart always -p 3005:3005 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
 
 Data will be saved in the `/home/ubuntu/data/go-file` directory on the host machine.
 

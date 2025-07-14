@@ -67,12 +67,12 @@ _✨ Công cụ chia sẻ tệp, chỉ một tệp thực thi duy nhất, sẵn 
 12. Tạo **launcher** cho người dùng không quen với dòng lệnh, [xem tại đây](https://github.com/songquanpeng/gofile-launcher).
 13. **Hỗ trợ PicGo**, tìm kiếm plugin `gofile` để cài đặt, [xem tại đây](https://github.com/songquanpeng/picgo-plugin-gofile).
 14. Công cụ CLI đi kèm, hỗ trợ tải lên tệp qua dòng lệnh, hỗ trợ chia sẻ tệp chế độ P2P, [xem tại đây](https://github.com/songquanpeng/gofile-cli).
-15. Triển khai Docker một cú nhấp: `docker run -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
+15. Triển khai Docker một cú nhấp: `docker run -d --restart always -p 3005:3005 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
 
 ## Cách Sử Dụng
 > Để sử dụng phiên bản v0.3.3 và các phiên bản trước đó, vui lòng [nhấp vào đây](https://github.com/songquanpeng/go-file/tree/52e8303e33e99bbcaf583d2d5a5bb0ec197bc676#使用方法).
 
-Chỉ cần nhấp đúp để sử dụng, cổng mặc định là `3000`. Chương trình sẽ tự động tạo tài khoản quản trị viên khi khởi động lần đầu, tên người dùng là `admin`, mật khẩu là `123456`. Hãy nhớ vào `Quản Lý` -> tab `Quản Lý Tài Khoản` để thay đổi mật khẩu người dùng sau khi đăng nhập.
+Chỉ cần nhấp đúp để sử dụng, cổng mặc định là `3005`. Chương trình sẽ tự động tạo tài khoản quản trị viên khi khởi động lần đầu, tên người dùng là `admin`, mật khẩu là `123456`. Hãy nhớ vào `Quản Lý` -> tab `Quản Lý Tài Khoản` để thay đổi mật khẩu người dùng sau khi đăng nhập.
 
 Chương trình sẽ tự động mở trình duyệt cho bạn. Nhấp vào nút `Tải Lên` ở góc trên bên phải để tải lên tệp. Hỗ trợ kéo thả tải lên và tải lên đồng thời nhiều tệp.
 
@@ -98,7 +98,7 @@ Chương trình sẽ tự động mở trình duyệt cho bạn. Nhấp vào nú
 Được khuyến nghị sử dụng [launcher](https://github.com/songquanpeng/gofile-launcher) trực tiếp.
 
 **Triển khai bằng Docker:**
-Thực thi: `docker run -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
+Thực thi: `docker run -d --restart always -p 3005:3005 -e TZ=Asia/Shanghai -v /home/ubuntu/data/go-file:/data justsong/go-file`
 
 Dữ liệu sẽ được lưu trong thư mục `/home/ubuntu/data/go-file` trên máy chủ.
 
