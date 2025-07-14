@@ -48,6 +48,15 @@
     "previous_page": "Previous page",
     "next_page": "Next page"
   },
+  "placeholder": {
+    "enter_new_display_name": "Please enter a new display name",
+    "enter_new_password": "Please enter new password",
+    "enter_username": "Username",
+    "enter_password": "Password",
+    "username": "username",
+    "password": "password",
+    "search_files": "Search files..."
+  },
   "settings": {
     "enter_new_config": "Please enter new configuration",
     "options_load_failed": "Options loading failed: {{message}}",

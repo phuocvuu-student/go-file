@@ -48,6 +48,15 @@
     "previous_page": "上一页",
     "next_page": "下一页"
   },
+  "placeholder": {
+    "enter_new_display_name": "请输入新的显示名",
+    "enter_new_password": "请输入新密码",
+    "enter_username": "用户名",
+    "enter_password": "密码",
+    "username": "用户名",
+    "password": "密码",
+    "search_files": "搜索文件..."
+  },
   "settings": {
     "enter_new_config": "请输入新的配置",
     "options_load_failed": "选项加载失败：{{message}}",

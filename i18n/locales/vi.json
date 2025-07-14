@@ -48,6 +48,15 @@
     "previous_page": "Trang trước",
     "next_page": "Trang sau"
   },
+  "placeholder": {
+    "enter_new_display_name": "Vui lòng nhập tên hiển thị mới",
+    "enter_new_password": "Vui lòng nhập mật khẩu mới",
+    "enter_username": "Tên đăng nhập",
+    "enter_password": "Mật khẩu",
+    "username": "Tên đăng nhập",
+    "password": "Mật khẩu",
+    "search_files": "Tìm kiếm tệp..."
+  },
   "settings": {
     "enter_new_config": "Vui lòng nhập cấu hình mới",
     "options_load_failed": "Tải tùy chọn thất bại: {{message}}",

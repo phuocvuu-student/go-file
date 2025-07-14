@@ -48,6 +48,15 @@
     "previous_page": "前のページ",
     "next_page": "次のページ"
   },
+  "placeholder": {
+    "enter_new_display_name": "新しい表示名を入力してください",
+    "enter_new_password": "新しいパスワードを入力してください",
+    "enter_username": "ユーザー名",
+    "enter_password": "パスワード",
+    "username": "ユーザー名",
+    "password": "パスワード",
+    "search_files": "ファイルを検索..."
+  },
   "settings": {
     "enter_new_config": "新しい設定を入力してください",
     "options_load_failed": "オプションの読み込みに失敗しました：{{message}}",
