@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go File - Single Executable File Sharing Tool</title>
+    <meta name="description" content="Go File is a powerful, single executable file sharing tool with built-in image hosting and video playback capabilities. Perfect for LAN file sharing.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📁</text></svg>">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">📁</span>
+                <span class="logo-text">Go File</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="demo.html" class="nav-link">Demo</a></li>
+                <li><a href="api.html" class="nav-link">API</a></li>
+                <li><a href="https://go-file.onrender.com" class="nav-link live-demo" target="_blank">Live Demo</a></li>
+                <li><a href="https://github.com/songquanpeng/go-file" class="nav-link github-link" target="_blank">GitHub</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Single Executable<br>
+                        <span class="highlight">File Sharing Tool</span>
+                    </h1>
+                    <p class="hero-description">
+                        Go File is a powerful, zero-configuration file sharing solution. 
+                        Just download and run - no installation needed. Perfect for sharing files 
+                        across devices on your local network.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="https://github.com/songquanpeng/go-file/releases/latest" class="btn btn-primary">
+                            Download Now
+                        </a>
+                        <a href="demo.html" class="btn btn-secondary">
+                            View Demo
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Configuration Required</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Executable File</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">File Types Supported</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="demo-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <div class="window-title">Go File - localhost:3000</div>
+                        </div>
+                        <div class="window-content">
+                            <div class="upload-area">
+                                <div class="upload-icon">📁</div>
+                                <div class="upload-text">Drop files here or click to upload</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Go File?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3 class="feature-title">Zero Configuration</h3>
+                        <p class="feature-description">
+                            Just download and double-click to start. No installation, no setup, no configuration files needed.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🖼️</div>
+                        <h3 class="feature-title">Built-in Image Hosting</h3>
+                        <p class="feature-description">
+                            Direct paste uploads, drag-and-drop support, and a complete image gallery with sharing URLs.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎥</div>
+                        <h3 class="feature-title">Video Playback</h3>
+                        <p class="feature-description">
+                            Stream videos directly in the browser. Perfect for sharing media across devices on your network.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3 class="feature-title">Mobile Friendly</h3>
+                        <p class="feature-description">
+                            QR codes for easy mobile access, responsive design, and touch-optimized interface.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">Secure & Private</h3>
+                        <p class="feature-description">
+                            User authentication, permission controls, rate limiting, and token-based API access.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">High Performance</h3>
+                        <p class="feature-description">
+                            Built with Go for maximum speed. Utilizes full local network bandwidth for fast transfers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Download & Run</h3>
+                            <p class="step-description">Download the single executable file and double-click to start. The web interface opens automatically.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Upload Files</h3>
+                            <p class="step-description">Drag and drop files, paste images, or browse to select. Supports individual files and entire folders.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Share & Access</h3>
+                            <p class="step-description">Share the URL or scan the QR code from any device on your network. Files are instantly accessible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Demo Section -->
+        <section class="live-demo-section">
+            <div class="container">
+                <div class="demo-content">
+                    <div class="demo-text">
+                        <h2>Try Go File Now</h2>
+                        <p>Experience Go File in action with our live demo. Upload files, test the image hosting, and explore all features without any installation.</p>
+                        <div class="demo-credentials">
+                            <p><strong>Demo Credentials:</strong></p>
+                            <p>Username: <code>admin</code></p>
+                            <p>Password: <code>123456</code></p>
+                        </div>
+                        <a href="https://go-file.onrender.com" class="btn btn-primary" target="_blank">
+                            Open Live Demo
+                        </a>
+                    </div>
+                    <div class="demo-preview">
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <div class="browser-controls">
+                                    <span class="control"></span>
+                                    <span class="control"></span>
+                                    <span class="control"></span>
+                                </div>
+                                <div class="browser-url">go-file.onrender.com</div>
+                            </div>
+                            <div class="browser-content">
+                                <iframe src="https://go-file.onrender.com" frameborder="0" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation Section -->
+        <section class="installation">
+            <div class="container">
+                <h2 class="section-title">Quick Start</h2>
+                <div class="install-options">
+                    <div class="install-option">
+                        <h3>Standalone Executable</h3>
+                        <p>Download and run directly - no dependencies required.</p>
+                        <div class="code-block">
+                            <code>
+                                # Download the latest release<br>
+                                # Double-click to run<br>
+                                # Browser opens automatically at localhost:3000
+                            </code>
+                        </div>
+                        <a href="https://github.com/songquanpeng/go-file/releases/latest" class="btn btn-outline">Download</a>
+                    </div>
+                    <div class="install-option">
+                        <h3>Docker</h3>
+                        <p>Run with Docker for containerized deployment.</p>
+                        <div class="code-block">
+                            <code>
+                                docker run -d --restart always \<br>
+                                &nbsp;&nbsp;-p 3000:3000 \<br>
+                                &nbsp;&nbsp;-e TZ=Asia/Shanghai \<br>
+                                &nbsp;&nbsp;-v /path/to/data:/data \<br>
+                                &nbsp;&nbsp;justsong/go-file
+                            </code>
+                        </div>
+                        <a href="https://hub.docker.com/r/justsong/go-file" class="btn btn-outline">Docker Hub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Go File</h3>
+                    <p>The simplest file sharing solution for your local network.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="api.html">API Documentation</a></li>
+                        <li><a href="https://go-file.onrender.com" target="_blank">Live Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/songquanpeng/go-file" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/songquanpeng/go-file/releases" target="_blank">Releases</a></li>
+                        <li><a href="https://github.com/songquanpeng/gofile-launcher" target="_blank">GUI Launcher</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/songquanpeng/go-file/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/songquanpeng/go-file/discussions" target="_blank">Discussions</a></li>
+                        <li><a href="https://github.com/songquanpeng/gofile-cli" target="_blank">CLI Tool</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Go File. Open source project by <a href="https://github.com/songquanpeng" target="_blank">songquanpeng</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
