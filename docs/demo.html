@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Go File</title>
+    <meta name="description" content="Interactive demo showcasing Go File's features: file sharing, image hosting, video playback, and more.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📁</text></svg>">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">📁</span>
+                <span class="logo-text">Go File</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="demo.html" class="nav-link active">Demo</a></li>
+                <li><a href="api.html" class="nav-link">API</a></li>
+                <li><a href="https://go-file.onrender.com" class="nav-link live-demo" target="_blank">Live Demo</a></li>
+                <li><a href="https://github.com/songquanpeng/go-file" class="nav-link github-link" target="_blank">GitHub</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Demo Hero Section -->
+        <section class="demo-hero">
+            <div class="container">
+                <h1 class="demo-title">Interactive Demo</h1>
+                <p class="demo-subtitle">Explore Go File's capabilities with our interactive demos and live examples</p>
+            </div>
+        </section>
+
+        <!-- Live Demo Section -->
+        <section class="live-demo-showcase">
+            <div class="container">
+                <div class="demo-card featured">
+                    <div class="demo-header">
+                        <h2>🌐 Live Demo</h2>
+                        <p>Try Go File in a real environment with our hosted demo</p>
+                    </div>
+                    <div class="demo-content">
+                        <div class="demo-info">
+                            <h3>Full Featured Demo</h3>
+                            <p>Experience all Go File features in our live demo environment:</p>
+                            <ul class="feature-list">
+                                <li>✅ File upload and download</li>
+                                <li>✅ Image hosting and gallery</li>
+                                <li>✅ Video streaming</li>
+                                <li>✅ Folder sharing</li>
+                                <li>✅ Mobile interface</li>
+                                <li>✅ QR code sharing</li>
+                            </ul>
+                            <div class="demo-credentials">
+                                <h4>Login Credentials:</h4>
+                                <p><strong>Username:</strong> <code>admin</code></p>
+                                <p><strong>Password:</strong> <code>123456</code></p>
+                            </div>
+                            <a href="https://go-file.onrender.com" class="btn btn-primary" target="_blank">
+                                Launch Live Demo
+                            </a>
+                        </div>
+                        <div class="demo-preview">
+                            <div class="browser-mockup">
+                                <div class="browser-bar">
+                                    <div class="browser-controls">
+                                        <span class="control red"></span>
+                                        <span class="control yellow"></span>
+                                        <span class="control green"></span>
+                                    </div>
+                                    <div class="url-bar">go-file.onrender.com</div>
+                                </div>
+                                <div class="browser-content">
+                                    <iframe src="https://go-file.onrender.com" frameborder="0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Demos Section -->
+        <section class="feature-demos">
+            <div class="container">
+                <h2 class="section-title">Feature Showcases</h2>
+                
+                <!-- Upload Demo -->
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3>📤 File Upload Demo</h3>
+                        <p>See how easy it is to upload files with drag-and-drop support</p>
+                    </div>
+                    <div class="demo-content">
+                        <div class="upload-demo">
+                            <div class="upload-area-demo" id="uploadDemo">
+                                <div class="upload-icon">📁</div>
+                                <div class="upload-text">
+                                    <p><strong>Drag files here or click to select</strong></p>
+                                    <p class="upload-subtext">Supports multiple files, images, videos, and folders</p>
+                                </div>
+                                <input type="file" id="fileInput" multiple style="display: none;">
+                            </div>
+                            <div class="upload-features">
+                                <div class="feature-item">
+                                    <span class="feature-icon">🖱️</span>
+                                    <span>Drag & Drop</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">📋</span>
+                                    <span>Paste Upload</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">📁</span>
+                                    <span>Folder Support</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">📊</span>
+                                    <span>Progress Tracking</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Hosting Demo -->
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3>🖼️ Image Hosting Demo</h3>
+                        <p>Built-in image gallery with direct sharing capabilities</p>
+                    </div>
+                    <div class="demo-content">
+                        <div class="image-gallery-demo">
+                            <div class="gallery-grid">
+                                <div class="image-item">
+                                    <div class="image-placeholder">
+                                        <span>🖼️</span>
+                                        <p>sample1.jpg</p>
+                                    </div>
+                                    <div class="image-actions">
+                                        <button class="btn-small">View</button>
+                                        <button class="btn-small">Share</button>
+                                        <button class="btn-small">Download</button>
+                                    </div>
+                                </div>
+                                <div class="image-item">
+                                    <div class="image-placeholder">
+                                        <span>🎨</span>
+                                        <p>artwork.png</p>
+                                    </div>
+                                    <div class="image-actions">
+                                        <button class="btn-small">View</button>
+                                        <button class="btn-small">Share</button>
+                                        <button class="btn-small">Download</button>
+                                    </div>
+                                </div>
+                                <div class="image-item">
+                                    <div class="image-placeholder">
+                                        <span>📸</span>
+                                        <p>photo.jpeg</p>
+                                    </div>
+                                    <div class="image-actions">
+                                        <button class="btn-small">View</button>
+                                        <button class="btn-small">Share</button>
+                                        <button class="btn-small">Download</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallery-features">
+                                <h4>Image Hosting Features:</h4>
+                                <ul>
+                                    <li>Direct paste upload from clipboard</li>
+                                    <li>Automatic thumbnail generation</li>
+                                    <li>Shareable direct links</li>
+                                    <li>Gallery view with metadata</li>
+                                    <li>PicGo plugin support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Playback Demo -->
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3>🎥 Video Playback Demo</h3>
+                        <p>Stream videos directly in the browser with built-in player</p>
+                    </div>
+                    <div class="demo-content">
+                        <div class="video-demo">
+                            <div class="video-player-mock">
+                                <div class="video-screen">
+                                    <div class="play-button">▶️</div>
+                                    <div class="video-title">sample-video.mp4</div>
+                                </div>
+                                <div class="video-controls">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 30%"></div>
+                                    </div>
+                                    <div class="control-buttons">
+                                        <button>⏮️</button>
+                                        <button>⏸️</button>
+                                        <button>⏭️</button>
+                                        <button>🔊</button>
+                                        <button>⛶</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-features">
+                                <h4>Video Features:</h4>
+                                <ul>
+                                    <li>Multiple format support (MP4, AVI, MKV, etc.)</li>
+                                    <li>Responsive video player</li>
+                                    <li>Playlist management</li>
+                                    <li>Cross-device streaming</li>
+                                    <li>Full screen support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Demo -->
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3>📱 Mobile Experience</h3>
+                        <p>QR code sharing and mobile-optimized interface</p>
+                    </div>
+                    <div class="demo-content">
+                        <div class="mobile-demo">
+                            <div class="qr-demo">
+                                <div class="qr-code">
+                                    <div class="qr-pattern">
+                                        <div class="qr-square"></div>
+                                        <div class="qr-square"></div>
+                                        <div class="qr-square"></div>
+                                        <div class="qr-square"></div>
+                                        <div class="qr-square"></div>
+                                        <div class="qr-square"></div>
+                                        <div class="qr-square"></div>
+                                        <div class="qr-square"></div>
+                                        <div class="qr-square"></div>
+                                    </div>
+                                </div>
+                                <p>Scan to access on mobile</p>
+                            </div>
+                            <div class="mobile-mockup">
+                                <div class="phone-frame">
+                                    <div class="phone-screen">
+                                        <div class="mobile-header">Go File</div>
+                                        <div class="mobile-content">
+                                            <div class="mobile-upload">📤 Upload</div>
+                                            <div class="mobile-files">📁 Files</div>
+                                            <div class="mobile-images">🖼️ Images</div>
+                                            <div class="mobile-videos">🎥 Videos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobile-features">
+                                <h4>Mobile Features:</h4>
+                                <ul>
+                                    <li>Touch-optimized interface</li>
+                                    <li>QR code generation</li>
+                                    <li>Mobile file upload</li>
+                                    <li>Responsive design</li>
+                                    <li>Swipe gestures</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Examples Section -->
+        <section class="usage-examples">
+            <div class="container">
+                <h2 class="section-title">Usage Examples</h2>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <h3>🏠 Home Network Sharing</h3>
+                        <p>Share files between devices on your home network</p>
+                        <div class="example-steps">
+                            <ol>
+                                <li>Run go-file on your computer</li>
+                                <li>Upload files or share folders</li>
+                                <li>Access from any device on the network</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <h3>🖼️ Photo Sharing</h3>
+                        <p>Quick image hosting for sharing photos</p>
+                        <div class="example-steps">
+                            <ol>
+                                <li>Paste or drag images to upload</li>
+                                <li>Get shareable direct links</li>
+                                <li>Access from gallery or via URL</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <h3>🎬 Media Streaming</h3>
+                        <p>Stream videos to other devices</p>
+                        <div class="example-steps">
+                            <ol>
+                                <li>Share video folder with --video flag</li>
+                                <li>Browse videos in web interface</li>
+                                <li>Stream to phones, tablets, smart TVs</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <h3>💼 Work File Transfer</h3>
+                        <p>Transfer files between work devices</p>
+                        <div class="example-steps">
+                            <ol>
+                                <li>Set up on office network</li>
+                                <li>Use authentication for security</li>
+                                <li>Transfer large files quickly</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Command Examples Section -->
+        <section class="command-examples">
+            <div class="container">
+                <h2 class="section-title">Command Examples</h2>
+                <div class="commands-grid">
+                    <div class="command-card">
+                        <h3>Basic Usage</h3>
+                        <div class="command">
+                            <code>./go-file</code>
+                        </div>
+                        <p>Starts Go File on default port 3000</p>
+                    </div>
+                    <div class="command-card">
+                        <h3>Custom Port</h3>
+                        <div class="command">
+                            <code>./go-file --port 8080</code>
+                        </div>
+                        <p>Run on a different port</p>
+                    </div>
+                    <div class="command-card">
+                        <h3>Share Folder</h3>
+                        <div class="command">
+                            <code>./go-file --path ./documents</code>
+                        </div>
+                        <p>Share a specific folder</p>
+                    </div>
+                    <div class="command-card">
+                        <h3>Video Streaming</h3>
+                        <div class="command">
+                            <code>./go-file --video ./movies</code>
+                        </div>
+                        <p>Enable video streaming from folder</p>
+                    </div>
+                    <div class="command-card">
+                        <h3>Custom Host</h3>
+                        <div class="command">
+                            <code>./go-file --host 192.168.1.100</code>
+                        </div>
+                        <p>Specify IP address for QR codes</p>
+                    </div>
+                    <div class="command-card">
+                        <h3>No Browser</h3>
+                        <div class="command">
+                            <code>./go-file --no-browser true</code>
+                        </div>
+                        <p>Don't auto-open browser</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Try It Section -->
+        <section class="try-it">
+            <div class="container">
+                <div class="try-it-content">
+                    <h2>Ready to Try Go File?</h2>
+                    <p>Download the latest release and start sharing files in seconds</p>
+                    <div class="try-it-buttons">
+                        <a href="https://github.com/songquanpeng/go-file/releases/latest" class="btn btn-primary">
+                            Download Now
+                        </a>
+                        <a href="https://go-file.onrender.com" class="btn btn-secondary" target="_blank">
+                            Try Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Go File</h3>
+                    <p>The simplest file sharing solution for your local network.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="api.html">API Documentation</a></li>
+                        <li><a href="https://go-file.onrender.com" target="_blank">Live Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/songquanpeng/go-file" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/songquanpeng/go-file/releases" target="_blank">Releases</a></li>
+                        <li><a href="https://github.com/songquanpeng/gofile-launcher" target="_blank">GUI Launcher</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/songquanpeng/go-file/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/songquanpeng/go-file/discussions" target="_blank">Discussions</a></li>
+                        <li><a href="https://github.com/songquanpeng/gofile-cli" target="_blank">CLI Tool</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Go File. Open source project by <a href="https://github.com/songquanpeng" target="_blank">songquanpeng</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

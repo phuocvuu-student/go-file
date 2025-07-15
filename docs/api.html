@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation - Go File</title>
+    <meta name="description" content="Complete API documentation for Go File, including authentication, file upload, and integration examples.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📁</text></svg>">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">📁</span>
+                <span class="logo-text">Go File</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="demo.html" class="nav-link">Demo</a></li>
+                <li><a href="api.html" class="nav-link active">API</a></li>
+                <li><a href="https://go-file.onrender.com" class="nav-link live-demo" target="_blank">Live Demo</a></li>
+                <li><a href="https://github.com/songquanpeng/go-file" class="nav-link github-link" target="_blank">GitHub</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- API Hero Section -->
+        <section class="api-hero">
+            <div class="container">
+                <h1 class="api-title">API Documentation</h1>
+                <p class="api-subtitle">Integrate Go File into your applications with our RESTful API</p>
+            </div>
+        </section>
+
+        <!-- API Overview -->
+        <section class="api-overview">
+            <div class="container">
+                <div class="api-intro">
+                    <h2>Getting Started</h2>
+                    <p>Go File provides a RESTful API for programmatic access to file upload, management, and sharing features. All API endpoints support token-based authentication for secure integration.</p>
+                </div>
+                
+                <div class="api-quickstart">
+                    <h3>Quick Start</h3>
+                    <div class="quickstart-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h4>Generate API Token</h4>
+                                <p>Login to your Go File instance and navigate to Account Management to generate an API token.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h4>Set Authorization Header</h4>
+                                <p>Include your token in the Authorization header: <code>Authorization: Bearer YOUR_TOKEN</code></p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h4>Make API Calls</h4>
+                                <p>Use any HTTP client to interact with the API endpoints documented below.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Authentication -->
+        <section class="api-section">
+            <div class="container">
+                <h2 class="section-title">Authentication</h2>
+                
+                <div class="api-card">
+                    <h3>Token Authentication</h3>
+                    <p>Go File uses token-based authentication. Include your API token in the Authorization header of your requests.</p>
+                    
+                    <div class="code-example">
+                        <h4>Headers</h4>
+                        <pre><code>Authorization: Bearer YOUR_API_TOKEN
+Content-Type: application/json</code></pre>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>Alternative Format</h4>
+                        <pre><code>Authorization: YOUR_API_TOKEN</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Upload API -->
+        <section class="api-section">
+            <div class="container">
+                <h2 class="section-title">File Upload</h2>
+                
+                <div class="api-card">
+                    <div class="api-endpoint">
+                        <span class="method post">POST</span>
+                        <span class="url">/api/upload</span>
+                    </div>
+                    
+                    <h3>Upload Files</h3>
+                    <p>Upload one or more files to the Go File server.</p>
+                    
+                    <div class="api-params">
+                        <h4>Parameters</h4>
+                        <table class="params-table">
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>file</td>
+                                <td>File</td>
+                                <td>Yes</td>
+                                <td>The file(s) to upload (multipart/form-data)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>cURL Example</h4>
+                        <pre><code>curl -X POST \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -F "file=@/path/to/your/file.jpg" \
+  http://localhost:3000/api/upload</code></pre>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>Python Example</h4>
+                        <pre><code>import requests
+
+url = 'http://localhost:3000/api/upload'
+headers = {'Authorization': 'Bearer YOUR_TOKEN'}
+files = {'file': open('file.jpg', 'rb')}
+
+response = requests.post(url, headers=headers, files=files)
+print(response.json())</code></pre>
+                    </div>
+                    
+                    <div class="code-example">
+                        <h4>JavaScript Example</h4>
+                        <pre><code>const formData = new FormData();
+formData.append('file', fileInput.files[0]);
+
+fetch('http://localhost:3000/api/upload', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN'
+  },
+  body: formData
+})
+.then(response => response.json())
+.then(data => console.log(data));</code></pre>
+                    </div>
+                    
+                    <div class="api-response">
+                        <h4>Response</h4>
+                        <pre><code>{
+  "success": true,
+  "message": "File uploaded successfully",
+  "data": {
+    "filename": "file.jpg",
+    "url": "http://localhost:3000/file/abc123",
+    "size": 1024576,
+    "type": "image/jpeg"
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Upload API -->
+        <section class="api-section">
+            <div class="container">
+                <h2 class="section-title">Image Upload</h2>
+                
+                <div class="api-card">
+                    <div class="api-endpoint">
+                        <span class="method post">POST</span>
+                        <span class="url">/api/image/upload</span>
+                    </div>
+                    
+                    <h3>Upload Images</h3>
+                    <p>Upload images to the built-in image hosting service.</p>
+                    
+                    <div class="code-example">
+                        <h4>cURL Example</h4>
+                        <pre><code>curl -X POST \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -F "image=@/path/to/image.png" \
+  http://localhost:3000/api/image/upload</code></pre>
+                    </div>
+                    
+                    <div class="api-response">
+                        <h4>Response</h4>
+                        <pre><code>{
+  "success": true,
+  "message": "Image uploaded successfully",
+  "data": {
+    "filename": "image.png",
+    "url": "http://localhost:3000/image/xyz789",
+    "thumbnail": "http://localhost:3000/image/xyz789/thumb",
+    "size": 512000,
+    "dimensions": {
+      "width": 1920,
+      "height": 1080
+    }
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Management API -->
+        <section class="api-section">
+            <div class="container">
+                <h2 class="section-title">File Management</h2>
+                
+                <div class="api-cards-grid">
+                    <div class="api-card">
+                        <div class="api-endpoint">
+                            <span class="method get">GET</span>
+                            <span class="url">/api/files</span>
+                        </div>
+                        
+                        <h3>List Files</h3>
+                        <p>Get a list of all uploaded files.</p>
+                        
+                        <div class="code-example">
+                            <h4>Example</h4>
+                            <pre><code>curl -H "Authorization: Bearer YOUR_TOKEN" \
+  http://localhost:3000/api/files</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="api-card">
+                        <div class="api-endpoint">
+                            <span class="method get">GET</span>
+                            <span class="url">/api/file/{id}</span>
+                        </div>
+                        
+                        <h3>Get File Info</h3>
+                        <p>Get information about a specific file.</p>
+                        
+                        <div class="code-example">
+                            <h4>Example</h4>
+                            <pre><code>curl -H "Authorization: Bearer YOUR_TOKEN" \
+  http://localhost:3000/api/file/abc123</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="api-card">
+                        <div class="api-endpoint">
+                            <span class="method delete">DELETE</span>
+                            <span class="url">/api/file/{id}</span>
+                        </div>
+                        
+                        <h3>Delete File</h3>
+                        <p>Delete a specific file from the server.</p>
+                        
+                        <div class="code-example">
+                            <h4>Example</h4>
+                            <pre><code>curl -X DELETE \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  http://localhost:3000/api/file/abc123</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Examples -->
+        <section class="api-section">
+            <div class="container">
+                <h2 class="section-title">Integration Examples</h2>
+                
+                <div class="integration-grid">
+                    <div class="integration-card">
+                        <h3>🖼️ PicGo Plugin</h3>
+                        <p>Use Go File as an image hosting backend for PicGo.</p>
+                        <div class="code-example">
+                            <h4>Install Plugin</h4>
+                            <pre><code># Search for "gofile" in PicGo plugins
+# Configure with your Go File server URL and token</code></pre>
+                        </div>
+                        <a href="https://github.com/songquanpeng/picgo-plugin-gofile" class="btn btn-outline" target="_blank">
+                            View Plugin
+                        </a>
+                    </div>
+                    
+                    <div class="integration-card">
+                        <h3>📝 Typora Integration</h3>
+                        <p>Use Go File as an image uploader for Typora markdown editor.</p>
+                        <div class="code-example">
+                            <h4>Python Script</h4>
+                            <pre><code># Download the Typora script from:
+# ./script/typora.py
+
+# Configure in Typora:
+# Image Uploader: Custom Command
+# Command: python /path/to/typora.py</code></pre>
+                        </div>
+                        <a href="https://github.com/songquanpeng/go-file/blob/main/script/typora.py" class="btn btn-outline" target="_blank">
+                            View Script
+                        </a>
+                    </div>
+                    
+                    <div class="integration-card">
+                        <h3>🔧 Custom Integration</h3>
+                        <p>Build your own integration using the API.</p>
+                        <div class="code-example">
+                            <h4>Node.js Example</h4>
+                            <pre><code>const axios = require('axios');
+const FormData = require('form-data');
+
+async function uploadFile(filePath) {
+  const form = new FormData();
+  form.append('file', fs.createReadStream(filePath));
+  
+  const response = await axios.post(
+    'http://localhost:3000/api/upload',
+    form,
+    {
+      headers: {
+        'Authorization': 'Bearer YOUR_TOKEN',
+        ...form.getHeaders()
+      }
+    }
+  );
+  
+  return response.data;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Error Handling -->
+        <section class="api-section">
+            <div class="container">
+                <h2 class="section-title">Error Handling</h2>
+                
+                <div class="api-card">
+                    <h3>HTTP Status Codes</h3>
+                    <p>Go File API uses standard HTTP status codes to indicate success or failure.</p>
+                    
+                    <table class="status-table">
+                        <tr>
+                            <th>Code</th>
+                            <th>Meaning</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>200</td>
+                            <td>OK</td>
+                            <td>Request successful</td>
+                        </tr>
+                        <tr>
+                            <td>400</td>
+                            <td>Bad Request</td>
+                            <td>Invalid request parameters</td>
+                        </tr>
+                        <tr>
+                            <td>401</td>
+                            <td>Unauthorized</td>
+                            <td>Invalid or missing authentication token</td>
+                        </tr>
+                        <tr>
+                            <td>403</td>
+                            <td>Forbidden</td>
+                            <td>Insufficient permissions</td>
+                        </tr>
+                        <tr>
+                            <td>404</td>
+                            <td>Not Found</td>
+                            <td>Resource not found</td>
+                        </tr>
+                        <tr>
+                            <td>413</td>
+                            <td>Payload Too Large</td>
+                            <td>File size exceeds limit</td>
+                        </tr>
+                        <tr>
+                            <td>500</td>
+                            <td>Internal Server Error</td>
+                            <td>Server error occurred</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="code-example">
+                        <h4>Error Response Format</h4>
+                        <pre><code>{
+  "success": false,
+  "error": "Unauthorized",
+  "message": "Invalid authentication token"
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rate Limiting -->
+        <section class="api-section">
+            <div class="container">
+                <h2 class="section-title">Rate Limiting</h2>
+                
+                <div class="api-card">
+                    <h3>Request Limits</h3>
+                    <p>Go File implements rate limiting to prevent abuse. Rate limits can be configured by the server administrator.</p>
+                    
+                    <div class="rate-limit-info">
+                        <div class="limit-item">
+                            <h4>Default Limits</h4>
+                            <ul>
+                                <li>Upload requests: 100 per hour per IP</li>
+                                <li>API requests: 1000 per hour per token</li>
+                                <li>File size: 100MB per file (configurable)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="limit-item">
+                            <h4>Rate Limit Headers</h4>
+                            <p>Responses include headers indicating current rate limit status:</p>
+                            <pre><code>X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 95
+X-RateLimit-Reset: 1640995200</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SDKs and Tools -->
+        <section class="api-section">
+            <div class="container">
+                <h2 class="section-title">SDKs and Tools</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>🛠️ CLI Tool</h3>
+                        <p>Command-line interface for Go File with P2P support.</p>
+                        <a href="https://github.com/songquanpeng/gofile-cli" class="btn btn-outline" target="_blank">
+                            Go File CLI
+                        </a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>🖥️ GUI Launcher</h3>
+                        <p>Desktop application for easy Go File management.</p>
+                        <a href="https://github.com/songquanpeng/gofile-launcher" class="btn btn-outline" target="_blank">
+                            GUI Launcher
+                        </a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>📸 PicGo Plugin</h3>
+                        <p>Image hosting plugin for PicGo image uploader.</p>
+                        <a href="https://github.com/songquanpeng/picgo-plugin-gofile" class="btn btn-outline" target="_blank">
+                            PicGo Plugin
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support -->
+        <section class="api-support">
+            <div class="container">
+                <div class="support-content">
+                    <h2>Need Help?</h2>
+                    <p>Check out the resources below for support and community help.</p>
+                    <div class="support-links">
+                        <a href="https://github.com/songquanpeng/go-file/issues" class="btn btn-outline" target="_blank">
+                            Report Issues
+                        </a>
+                        <a href="https://github.com/songquanpeng/go-file/discussions" class="btn btn-outline" target="_blank">
+                            Discussions
+                        </a>
+                        <a href="https://github.com/songquanpeng/go-file" class="btn btn-primary" target="_blank">
+                            View Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Go File</h3>
+                    <p>The simplest file sharing solution for your local network.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="https://go-file.onrender.com" target="_blank">Live Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/songquanpeng/go-file" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/songquanpeng/go-file/releases" target="_blank">Releases</a></li>
+                        <li><a href="https://github.com/songquanpeng/gofile-launcher" target="_blank">GUI Launcher</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/songquanpeng/go-file/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/songquanpeng/go-file/discussions" target="_blank">Discussions</a></li>
+                        <li><a href="https://github.com/songquanpeng/gofile-cli" target="_blank">CLI Tool</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Go File. Open source project by <a href="https://github.com/songquanpeng" target="_blank">songquanpeng</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
