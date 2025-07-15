@@ -2,6 +2,31 @@
 
 This demo showcases the English translation of the Go File sharing application from the `feature/translate_to_english` branch.
 
+## Demo Site Structure
+
+The GitHub Pages deployment creates a comprehensive demo with the following sections:
+
+### 🏠 Main Demo Page (`/`)
+- **Hero Section**: Gradient background with feature highlights
+- **Translation Features**: Interactive cards showing capabilities
+- **Translation Examples**: Real examples from the English JSON
+- **Navigation Links**: Access to templates and translation data
+
+### 📝 HTML Templates (`/translated/assets/`)
+- Interactive browser for all HTML templates
+- Shows `data-i18n` attributes in context
+- Includes navigation, forms, and UI components
+
+### 🌐 Translation Data (`/translated/i18n/`)
+- Complete English translation key-value pairs
+- Organized by sections (nav, upload, file operations, etc.)
+- Direct access to translation JSON structure
+
+### 📁 Static Assets (`/translated/static/`)
+- CSS stylesheets with application styling
+- JavaScript files including i18n system
+- Client-side translation loading logic
+
 ## What's Included
 
 ### Translation Features
@@ -102,6 +127,14 @@ git checkout feature/translate_to_english
 go build -o go-file
 ./go-file
 ```
+
+## Deployment
+
+The demo is automatically deployed via GitHub Actions when changes are pushed to the `feature/translate_to_english` branch:
+
+1. **Build Process**: Compiles Go application and extracts assets
+2. **Demo Creation**: Generates interactive demo pages
+3. **GitHub Pages**: Deploys to GitHub Pages with proper permissions
 
 ## Contributing
 
